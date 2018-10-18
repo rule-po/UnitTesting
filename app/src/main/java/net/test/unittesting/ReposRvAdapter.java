@@ -32,7 +32,6 @@ public class ReposRvAdapter extends RecyclerView.Adapter<ReposRvAdapter.RepoView
         return results.size();
     }
 
-    @DebugLog
     void updateResults(List<SearchResult> results) {
         this.results = results;
         notifyDataSetChanged();
@@ -47,7 +46,6 @@ public class ReposRvAdapter extends RecyclerView.Adapter<ReposRvAdapter.RepoView
             tvRepoName = itemView.findViewById(R.id.tv_repo_name);
         }
 
-        @DebugLog
         void bind(SearchResult searchResult) {
             tvRepoName.setText(searchResult.getFullName());
         }
