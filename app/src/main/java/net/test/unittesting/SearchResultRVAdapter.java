@@ -11,7 +11,7 @@ import net.test.unittesting.models.SearchResult;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReposRvAdapter extends RecyclerView.Adapter<ReposRvAdapter.RepoViewHolder> {
+public class SearchResultRVAdapter extends RecyclerView.Adapter<SearchResultRVAdapter.RepoViewHolder> {
     List<SearchResult> results = new ArrayList<>();
 
     @Override
@@ -32,7 +32,7 @@ public class ReposRvAdapter extends RecyclerView.Adapter<ReposRvAdapter.RepoView
         return results.size();
     }
 
-    void updateResults(List<SearchResult> results) {
+    public void updateResults(List<SearchResult> results) {
         this.results = results;
         notifyDataSetChanged();
     }

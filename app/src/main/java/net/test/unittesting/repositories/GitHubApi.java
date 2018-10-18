@@ -1,4 +1,4 @@
-package net.test.unittesting;
+package net.test.unittesting.repositories;
 
 import net.test.unittesting.models.SearchResponse;
 
