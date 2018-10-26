@@ -40,4 +40,6 @@ public class SearchPresenter implements SearchPresenterContract, GitHubRepositor
     public void handleGitHubError() {
         viewContract.displayError();
     }
+
+
 }
