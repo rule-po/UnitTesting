@@ -31,7 +31,7 @@ public class SearchPresenter implements SearchPresenterContract, GitHubRepositor
                 viewContract.displayError("Error");
             }
         }else {
-            viewContract.displayError("Error");
+            viewContract.displayError("Error2");
         }
 
     }

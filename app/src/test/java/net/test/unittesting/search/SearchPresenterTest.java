@@ -65,7 +65,7 @@ public class SearchPresenterTest {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void handleGithubResponse_Success(){
+        public void handleGithubResponse_Success(){
         Response response = Mockito.mock(Response.class);
         SearchResponse searchResponse = Mockito.mock(SearchResponse.class);
         Mockito.doReturn(true).when(response).isSuccessful();
@@ -77,5 +77,29 @@ public class SearchPresenterTest {
 
         Mockito.verify(viewContract, Mockito.times(1)).displaySearchResult(searchResults, 0);
     }
+
+    @Test
+    public void handleGithubResponse_Empty(){
+
+        Response response = Mockito.mock(Response.class);
+        Mockito.doReturn(true).when(response).isSuccessful();
+        Mockito.doReturn(null).when(response).body();
+
+        presenter.handleGithubResponse(response);
+
+        Mockito.verify(viewContract, Mockito.times(1)).displayError("Error");
+    }
+
+    @Test
+    public void handleGithubResponse_Error(){
+
+        Response response = Mockito.mock(Response.class);
+        Mockito.doReturn(false).when(response).isSuccessful();
+
+        presenter.handleGithubResponse(response);
+
+        Mockito.verify(viewContract, Mockito.times(1)).displayError("Error2");
+    }
+
 
 }
